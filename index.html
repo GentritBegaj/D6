@@ -1,0 +1,191 @@
+<!-- You have been assigned to the creation of a Smartphone Shop Website. The homepage you're about to write is just a showcase of the products of the shop with some extra information. No shopping cart / checkout features are required.
+
+Complete exercises from 1 to 6 with plain HTML.
+
+EX1.: Add H1 title with the name of the shop
+
+EX2.: Add a TABLE with the top 5 products of the shop
+
+EX3.: Each product should have one image, title, description and price
+
+EX4.: Add the links to Amazon products for each item in the table
+
+EX5.: Add a footer with the address and the name of the shop
+
+EX6.: Add a message board where the user can type a message in it
+
+EXTRA (use JS here)
+
+EX7.: Write a function to change the H1 text
+
+EX8.: Write a function to change the page background color
+
+EX9.: Write a function to change the footer address with a fake one
+
+EX10.: Write a function to add a CSS class to every Amazon link
+
+EX11: Write a function to toggle a CSS class for all the images in the table; that class should set the visibility of the image
+
+EX12: Write a function to color the price of every product in a different one every time -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smartphone Shop</title>
+
+    <style>
+
+        h1 {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        td img {
+            width: 50px;
+        }
+
+        td {
+            padding: 5px;;
+        }
+
+        textarea {
+            margin-top: 30px;
+            width: 30%;
+            background-color:lightgray;
+        }
+
+        button {
+            display: block;
+        }
+
+        .visibility {
+            visibility: hidden;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .h1-button {
+            margin: auto;
+            margin-top: -20px;
+            margin-bottom: 20px;
+
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Phone Shop</h1>
+    <button class="h1-button" onclick="changeH1Text()">Change header text</button>
+
+    <table>
+    <tr>
+        <th>Image</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Price</th>
+    </tr>
+
+    <tr>
+        <td><a href="https://www.amazon.de/Sony-Xperia-Smartphone-6-1-CinemaWide/dp/B08SS4ZP4G/ref=sr_1_1_sspa?dchild=1&keywords=smartphone&qid=1612790212&sr=8-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzT1haMzNaOEtPSEJOJmVuY3J5cHRlZElkPUEwODkxMTEzMVowWkkwUzBGMEs5MCZlbmNyeXB0ZWRBZElkPUEwMTg5MDMyMUNCU1FOVVQyUlNaRiZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU="><img src="https://images-na.ssl-images-amazon.com/images/I/7169uPwLf7L._AC_SL1500_.jpg" alt="photo-1"></a></td>
+        <td>Sony Xperia 5 II 5G</td>
+        <td>Smartphone 6.1" 21:9 CinemaWide FHD+ HDR OLED Display Triple Camera System 3.5mm Audio Port Android 10 SIM Free 8GB RAM 128GB..</td>
+        <td>$799</td>
+    </tr>
+
+    <tr>
+        <td><a href="https://www.amazon.de/CUBOT-Smartphone-Without-Contract-Android-blue/dp/B08DRBPCZS/ref=sr_1_2_sspa?dchild=1&keywords=smartphone&qid=1612790212&sr=8-2-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzT1haMzNaOEtPSEJOJmVuY3J5cHRlZElkPUEwODkxMTEzMVowWkkwUzBGMEs5MCZlbmNyeXB0ZWRBZElkPUEwNjAwMTg1U0xSRklHTkJLWFFCJndpZGdldE5hbWU9c3BfYXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ=="><img src="https://images-na.ssl-images-amazon.com/images/I/61pRF5OubpL._AC_SL1500_.jpg" alt="photo-1"></a></td>
+        <td>CUBOT Note 7</td>
+        <td>Smartphone 4G Without Contract Android 10</td>
+        <td>$69.99</td>
+
+    </tr>
+
+    <tr>
+        <td><a href="https://www.amazon.de/-/en/F-SMA515FZKAMZ-Samsung-Galaxy-A51-Prism-Crush-Black/dp/B08CVJ59G3/ref=sr_1_3?dchild=1&keywords=smartphone&qid=1612791050&sr=8-3"><img src="https://images-na.ssl-images-amazon.com/images/I/81wr-KAurwL._AC_SL1500_.jpg" alt="photo-1"></a></td>
+        <td>Samsung Galaxy A51</td>
+        <td>Almost borderless display: Immerse yourself deep into the latest games and series on the 6.5 inch FHD+ display with Super AMOLED technology.</td>
+        <td>$299.99</td>
+    </tr>
+
+    <tr>
+        <td><a href="https://www.amazon.de/-/en/Samsung-Smartphone-Internal-Android-Version-Blue/dp/B0877N13TJ/ref=sr_1_4?dchild=1&keywords=smartphone&qid=1612791050&sr=8-4"><img src="https://images-na.ssl-images-amazon.com/images/I/71RhBq7W0dL._AC_SL1500_.jpg" alt="photo-1"></a></td>
+        <td>Samsung Galaxy M31</td>
+        <td>Smartphone (15.92 cm / 6.4 Inches, 64 GB Internal Memory, 6 GB RAM, Android, German Version, Blue</td>
+        <td>$229</td>
+    </tr>
+
+    <tr>
+        <td><a href="https://www.amazon.de/-/en/Blackview-Smartphone-Contract-Expandable-Beginner-Black/dp/B07N1MLMDD/ref=sr_1_5?dchild=1&keywords=smartphone&qid=1612791050&sr=8-5"><img src="https://images-na.ssl-images-amazon.com/images/I/71Oid7uZhzL._AC_SL1500_.jpg" alt="photo-1"></a></td>
+        <td>Blackview A60 Smartphone</td>
+        <td>Without Contract, 15.49 cm (6.1 Inch) HD+ Display, 4080 mAh Battery, 13 MP + 5 MP Dual Camera, 16 GB ROM, 128 GB Expandable Dual...</td>
+        <td>$69</td>
+    </tr>
+
+    </table>
+
+    <div>
+        <textarea id="text-area" cols="30" rows="10" placeholder="Leave us a message"></textarea>
+        <button type="submit">Submit</button>
+    </div>
+
+    <footer>
+        <p>Phone Shop Ltd.</p>
+        <address>221b Baker St. London, UK</address>
+    </footer>
+
+    <script>
+
+        function changeH1Text () {
+            document.querySelector('h1').innerText = "Changed Text";
+        }
+
+        function changeBackground() {
+            document.querySelector('body').style.backgroundColor = "lightblue";
+        }
+
+        function changeAddress () {
+            document.querySelector('address').innerText = "37 Fake Address, Winter Wonderland"
+        }
+
+        function addClass() {
+            let links = document.getElementsByTagName('a');
+            for (let i = 0; i < links.length; i++) {
+                links[i].classList.add('amazon-link');
+            }
+        }
+
+        function toggleClass() {
+            let images = document.getElementsByTagName('img');
+            for(let i = 0; i < images.length; i++) {
+                images[i].classList.toggle('visibility')
+            }
+            
+        }
+
+        function changePriceColor () {
+            let price = document.querySelectorAll('td:last-child');
+            for(let i = 0; i < price.length; i++) {
+                
+                price[i].style.color = price[i].style.color === "black" ? "yellow" : "black";
+            }
+        }
+
+    </script>
+</body>
+</html>
