@@ -29,7 +29,8 @@
         function changePriceColor () {
             let price = document.querySelectorAll('td:last-child');
             for(let i = 0; i < price.length; i++) {
-                
-                price[i].style.color = price[i].style.color === "black" ? "yellow" : "black";
+                let randomNumber = Math.floor(Math.random() * 0xfffff * 1000000).toString(16);
+                let randomColor = "#" + randomNumber.slice(0,6);
+                price[i].style.color = randomColor;
             }
         }
